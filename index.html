@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Kalkulator Suhu</title>
+  </head>
+  <body>
+    <header>
+      <h1>Kalkulator Suhu</h1>
+    </header>
+    <main>
+      <h3>
+        Masukkan suhu derajat lalu klik tombol konversi untuk mendapatkan hasil konversi.
+      </h3>
+      <form class="form-flex" id="calc-form" onsubmit="convert();return false;">
+        <div class="celsius-flex">
+          <label for="celsius" id="celsius-label">Celsius (&deg;C)</label>
+          <input
+            type="number"
+            id="input-1"
+            name="celsius"
+            class="celsius-input"
+            placeholder="Masukkan suhu"
+            required
+          />
+          <button class="konversi-button">Konversi</button>
+        </div>
+        <div class="fahrenheit-flex">
+          <label for="fahrenheit" id="fahrenheit-label">Fahrenheit (&deg;F)</label>
+          <input
+            type="number"
+            id="input-2"
+            name="fahrenheit"
+            class="fahrenheit-input"
+            placeholder="Hasil konversi"
+            readonly
+          />
+        </div>
+        <div class="calculation-flex">
+          <label for="calculation">Cara Kalkulasi</label>
+          <textarea
+            id="calculation"
+            name="calculation"
+            class="calculation-output"
+            placeholder="Penjelasan kalkulasi"
+            rows="4"
+            readonly
+          ></textarea>
+          <div class="button-flex">
+            <p class="reverse-button" onclick="reverse();return false;">Reverse</p>
+            <p class="reset-button" onclick="reset()">Reset</p>
+          </div>
+        </div>
+      </form>
+      <hr/>
+      <h1>Cara Konversi</h1>
+      <h3>S(&deg;F) = (S(&deg;C) &times; 9/5) &plus; 32</h3>
+      <h3>S(&deg;C) = (S(&deg;F) &minus; 32) &times; 5/9</h3>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
